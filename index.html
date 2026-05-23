@@ -120,6 +120,62 @@
             background-color: #e68a00; /* Escurece ao passar o mouse */
         }
 
+        /* ================================================================
+           ESTILOS ADICIONADOS: Seção do Carrinho e Botão Remover
+        ================================================================ */
+        .secao-carrinho {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .secao-carrinho h2 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f8f9fa;
+            padding-bottom: 10px;
+        }
+
+        #lista-carrinho {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .btn-remover {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-remover:hover {
+            background-color: #b71c1c;
+        }
+
+        #total {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2e7d32;
+            text-align: right;
+        }
+
         /* 7. RODAPÉ */
         .rodape-principal {
             background-color: #333;
@@ -135,7 +191,6 @@
     <!-- CABEÇALHO DO SITE -->
     <header class="cabecalho-principal">
         <div class="logo">
-            <!-- Trocado o logo por um texto simulando uma marca -->
             <h2>🍕 Fatec Pizza</h2>
         </div>
         <nav class="menu">
@@ -151,34 +206,49 @@
     <main class="conteudo-principal">
         <h1 class="titulo-pagina">Nosso Cardápio</h1>
 
-        <!-- CONTAINER DAS PIZZAS (Agora com Flexbox!) -->
+        <!-- CONTAINER DAS PIZZAS -->
         <div class="grade-de-pizzas">
 
+            <!-- Pizza 1: Inserido data-sabor e data-preco -->
             <article class="cartao-pizza">
                 <img src="foto pizza calabresa.png" alt="Foto da Pizza de Calabresa">
                 <h2 class="sabor-nome">Calabresa Clássica</h2>
                 <p class="sabor-ingredientes">Massa fina, molho de tomate, muita calabresa e cebola fatiada.</p>
                 <p class="sabor-preco">R$ 45,00</p>
-                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+                <a href="#carrinho" class="botao-pedir" data-sabor="Calabresa Clássica" data-preco="45.00">Pedir Agora</a>
             </article>
 
+            <!-- Pizza 2: Inserido data-sabor e data-preco -->
             <article class="cartao-pizza">
                 <img src="foto margherita.png" alt="Foto da Pizza Margherita">
                 <h2 class="sabor-nome">Margherita Especial</h2>
                 <p class="sabor-ingredientes">Mussarela fresca, tomate, manjericão e um fio de azeite.</p>
                 <p class="sabor-preco">R$ 50,00</p>
-                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+                <a href="#carrinho" class="botao-pedir" data-sabor="Margherita Especial" data-preco="50.00">Pedir Agora</a>
             </article>
 
+            <!-- Pizza 3: Inserido data-sabor e data-preco -->
             <article class="cartao-pizza">
                 <img src="foto pizza frango.png" alt="Foto da Pizza de Frango">
                 <h2 class="sabor-nome">Frango com Catupiry</h2>
                 <p class="sabor-ingredientes">Frango desfiado temperado coberto com autêntico Catupiry.</p>
                 <p class="sabor-preco">R$ 55,00</p>
-                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+                <a href="#carrinho" class="botao-pedir" data-sabor="Frango com Catupiry" data-preco="55.00">Pedir Agora</a>
             </article>
 
         </div>
+
+        <!-- ================================================================
+           ESTRUTURA ADICIONADA: O container que exibe os itens do carrinho
+        ================================================================ */ -->
+        <section id="carrinho" class="secao-carrinho">
+            <h2>🛒 Seu Carrinho</h2>
+            <ul id="lista-carrinho">
+                <!-- O JavaScript vai preencher os itens aqui dentro dinamicamente -->
+            </ul>
+            <div id="total">Total: R$ 0.00</div>
+        </section>
+
     </main>
 
     <!-- RODAPÉ DO SITE -->
@@ -187,7 +257,7 @@
         <p>Desenvolvido pelos alunos de Sistemas Inteligentes.</p>
     </footer>
 
+    <!-- VÍNCULO COM O SCRIPT (Lembre de manter o arquivo app.js na mesma pasta) -->
+    <script src="app.js"></script>
 </body>
 </html>
-03 - pizzaria css.html
-Exibindo 03 - pizzaria css.html…
